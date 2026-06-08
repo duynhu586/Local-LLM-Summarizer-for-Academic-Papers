@@ -1,0 +1,36 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Environments & Virtual Environments (Crucial for python setups)
+.venv/
+venv/
+ENV/
+env/
+
+# Operating System Files
+.DS_Store
+Thumbs.db
+
+# Sensitive Data / Credentials (Never push your local environment keys)
+.env
+*.env
+
+# Local Large Language Model storage (if downloaded directly instead of Ollama's default path)
+*.gguf
+*.bin
+models/
+
+# Local Vector Database data caches & indexes (Prevent pushing massive bin files to GitHub)
+.qdrant/
+faiss_index/
+*.index
+*.pkl
+
+# IDE / Code Editor configs
+.vscode/
+.idea/
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
