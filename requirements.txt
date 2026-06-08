@@ -1,0 +1,7 @@
+langchain
+langchain-ollama
+pymupdf
+faiss-cpu
+qdrant-client
+ragas
+tiktoken
