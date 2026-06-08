@@ -76,6 +76,50 @@ graph TD
 
 ---
 
+## Installation and Setup
+
+Since the project is currently in the architectural and environment initialization phase, follow these setup steps to prepare your local machine for system deployment:
+
+### 1. Prerequisites & Local LLM Engine
+This architecture runs entirely offline. You need to install the Ollama engine to host and serve the quantized models locally.
+1. Download and install **Ollama** from the [Official Website](https://ollama.com/).
+2. Once installed, open your terminal and pull the optimized models required for the multi-stage pipeline:
+```bash
+   ollama pull qwen2.5:1.5b
+   ollama pull qwen2.5:3b
+```
+
+### 2. Environment Initialization
+Instead of cloning directly, please **Fork** this repository to your own GitHub account first to track your contributions and customizations, then clone your forked version:
+
+1. Click the **Fork** button at the top-right corner of this page.
+2. Clone your personal forked repository to your local machine
+3. Create and activate an isolated Python virtual environment:
+```bash
+# Windows (CMD/PowerShell)
+   python -m venv venv
+   .\venv\Scripts\activate
+```
+```bash
+   # macOS / Linux
+   python3 -m venv venv
+   source venv/bin/activate
+```
+
+### 3. Dependencies Installation
+Install the core AI framework tools and hardware-optimized packages:
+```bash
+pip install -r requirements.txt
+```
+**Note on Hardware Control:** The requirements.txt file is explicitly configured with faiss-cpu instead of the GPU variant. This ensures seamless compilation and execution in non-GPU or consumer-grade hardware environments, eliminating the need for complex NVIDIA CUDA driver configurations.
+
+### 4. Configuration Setup
+The system uses environment variables to handle local endpoint routes and decouple model names from the core code logic:
+1. Create your local configuration file by copying the provided template:
+```bash
+cp .env_example .env
+```
+
 ## Project Roadmap (Conceptual to Production)
 
 - [x] System Architecture and Component Mapping
